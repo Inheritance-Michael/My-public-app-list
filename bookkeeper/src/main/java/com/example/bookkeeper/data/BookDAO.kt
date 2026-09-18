@@ -22,13 +22,13 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface BookDAO{
     @Insert
-    fun insert(book: Book)
+    suspend fun insert(book: Book)
 
     @Update
-    fun update(book: Book)
+    suspend fun update(book: Book)
 
     @Delete
-    fun delete(book: Book)
+    suspend fun delete(book: Book)
 
     //Retrieving data
 
