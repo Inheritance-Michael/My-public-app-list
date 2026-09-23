@@ -18,17 +18,17 @@ import com.example.roomdatabase.ui.theme.MyApplicationTheme
 class RoomMainActivity : ComponentActivity() {
 
     private val db by lazy {
-        Room.databaseBuilder(
+        Room.databaseBuilder<ContactDatabase>(
             context = applicationContext,
-            klass = ContactDatabase::class.java,
-            name = "contact.db",
+            name = "contact.db"
         ).build()
     }
 
     private val viewModel by viewModels<ContactViewModel>(
         factoryProducer = {
-            object : ViewModelProvider.Factory{
+            object : ViewModelProvider.Factory {
                 override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                    @Suppress("UNCHECKED_CAST")
                     return ContactViewModel(db.contactDao()) as T
                 }
             }
@@ -46,19 +46,3 @@ class RoomMainActivity : ComponentActivity() {
         }
     }
 }
-
-//@Composable
-//fun Greeting(name: String, modifier: Modifier = Modifier) {
-//    Text(
-//        text = "Hello $name!",
-//        modifier = modifier
-//    )
-//}
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun GreetingPreview() {
-//    MyApplicationTheme {
-//        Greeting("Android")
-//    }
-//}

@@ -8,7 +8,10 @@ import androidx.room3.PrimaryKey
 data class Contact(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val firstName: String,
-    val lastName: String,
-    val phoneNumber: String
+    val firstName: String?,
+    val lastName: String?,
+    val phoneNumber: String,
+    val email: String?,
+    val company: String?,
+    val isFavourite: Boolean?
 )

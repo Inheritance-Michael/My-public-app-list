@@ -1,7 +1,8 @@
 package com.example.roomdatabase.data
 
 enum class SortType {
-    FIRSTNAME,
-    LASTNAME,
+    NONE,
+    EMAIL,
+    COMPANY,
     PHONE_NUMBER
 }
