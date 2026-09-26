@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bookkeeper" />
             <option value="$PROJECT_DIR$/roomdatabase" />
+            <option value="$PROJECT_DIR$/viewmodel" />
           </set>
         </option>
       </GradleProjectSettings>

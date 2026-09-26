@@ -1,7 +1,7 @@
 package com.example.viewmodel
 
 data class CalculatorState(
-    val getFirstQuery: Int? = 0,
+    val getFirstQuery: String = "",
     val getOperation: Operation? = null,
-    val getSecondQuery: Int = 0
+    val getSecondQuery: String = "",
 )

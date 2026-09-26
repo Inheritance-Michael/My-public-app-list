@@ -38,9 +38,9 @@ fun Calculator(
         ) {
             Text(
                 text = buildString {
-                    append(state.getFirstQuery.toString())
-                    append((state.getOperation ?: ""))
-                    append(state.getSecondQuery.toString())
+                    append(state.getFirstQuery)
+                    append((state.getOperation?.symbol ?: ""))
+                    append(state.getSecondQuery)
                 },
                 textAlign = TextAlign.End,
                 modifier= Modifier.fillMaxWidth()
@@ -56,27 +56,30 @@ fun Calculator(
             ){
                 CalculatorBTN(
                     "AC",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.primary)
                         .aspectRatio(2f)
                         .weight(2f),
+                    textColor = MaterialTheme.colorScheme.onPrimary,
                     onClick = {
                         onEvent(CalculatorEvent.Clear)
                     }
                 )
                 CalculatorBTN(
                     "Del",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.tertiary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onTertiary,
                     onClick = {
                         onEvent(CalculatorEvent.Delete)
                     }
                 )
                 CalculatorBTN(
                     "/",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.tertiary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onTertiary,
                     onClick = {
                         onEvent(CalculatorEvent.Operator(Operation.Divide))
                     }
@@ -89,36 +92,40 @@ fun Calculator(
             ){
                 CalculatorBTN(
                     "7",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(7))
                     }
                 )
                 CalculatorBTN(
                     "8",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(8))
                     }
                 )
                 CalculatorBTN(
                     "9",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(9))
                     }
                 )
                 CalculatorBTN(
                     "*",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.tertiary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onTertiary,
                     onClick = {
                         onEvent(CalculatorEvent.Operator(Operation.Multiple))
                     }
@@ -131,36 +138,40 @@ fun Calculator(
             ){
                 CalculatorBTN(
                     "4",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(4))
                     }
                 )
                 CalculatorBTN(
                     "5",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(5))
                     }
                 )
                 CalculatorBTN(
                     "6",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(6))
                     }
                 )
                 CalculatorBTN(
                     "-",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.tertiary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onTertiary,
                     onClick = {
                         onEvent(CalculatorEvent.Operator(Operation.Subtrack))
                     }
@@ -173,36 +184,40 @@ fun Calculator(
             ){
                 CalculatorBTN(
                     "1",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(1))
                     }
                 )
                 CalculatorBTN(
                     "2",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(2))
                     }
                 )
                 CalculatorBTN(
                     "3",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(3))
                     }
                 )
                 CalculatorBTN(
                     "+",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.tertiary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onTertiary,
                     onClick = {
                         onEvent(CalculatorEvent.Operator(Operation.Add))
                     }
@@ -214,27 +229,30 @@ fun Calculator(
             ){
                 CalculatorBTN(
                     "0",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(2f)
                         .weight(2f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Number(0))
                     }
                 )
                 CalculatorBTN(
                     ".",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.secondary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onSecondary,
                     onClick = {
                         onEvent(CalculatorEvent.Decimal)
                     }
                 )
                 CalculatorBTN(
                     "=",
-                    modifier = Modifier.background(MaterialTheme.colorScheme.onBackground)
+                    modifier = Modifier.background(MaterialTheme.colorScheme.primary)
                         .aspectRatio(1f)
                         .weight(1f),
+                    textColor = MaterialTheme.colorScheme.onPrimary,
                     onClick = {
                         onEvent(CalculatorEvent.Calculate)
                     }

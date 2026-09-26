@@ -10,13 +10,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 
 @Composable
 fun CalculatorBTN(
     symbol: String,
     modifier: Modifier,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    textColor: Color,
 ){
     Box(
         modifier = Modifier
@@ -27,8 +29,8 @@ fun CalculatorBTN(
     ){
         Text(
             symbol,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurface
+            style = MaterialTheme.typography.displayMedium,
+            color = textColor,
         )
     }
 }
